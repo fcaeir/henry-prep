@@ -78,9 +78,9 @@ function agregarNumeros(numeros) {
   // "numeros" debe ser un arreglo de enteros (int/integers)
   // Suma todos los enteros y devuelve el valor
   // Tu código:
-  var a = 0
-  var b = numeros.reduce((previousValue, currentValue) => previousValue + currentValue, a)
-  return b
+  
+  var sumaTotal = numeros.reduce(function(previousValue, currentValue) {return previousValue + currentValue}, 0)
+  return sumaTotal
 }
 
 
@@ -89,11 +89,7 @@ function promedioResultadosTest(resultadosTest) {
   // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
 
-  var sumaTotal = 0
-
-  for (i = 0; i < resultadosTest.length; i++) {
-    sumaTotal = sumaTotal + resultadosTest[i]
-  }
+  var sumaTotal = resultadosTest.reduce (function(previousValue, currentValue) {return previousValue + currentValue}, 0)
   var promedio = sumaTotal / resultadosTest.length
   return promedio
 
@@ -106,7 +102,7 @@ function numeroMasGrande(numeros) {
   // Tu código:
 
   var numeroMayor = 0
-  numeros.forEach((element) => {
+  numeros.forEach(function (element) {
     if (numeroMayor < element) {
       numeroMayor = element
     }
